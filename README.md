@@ -302,11 +302,61 @@ Dans un premier temps nous allons mettre en place un tableau afin d'identifier s
 | Regression logistique  	|   Oui   	|  Oui     	|Oui       	|Oui    	|
 | Détection de contours    	|   Oui    	|  Oui/Non 	|Non       	|Oui       	|
 
-Avec ce tableau on se rends compte que certains algorithmes ne peuvent pas être utilisé dans ce projet, du coup pour la suite on va se baser sur les algorithmes valables:
+Avec ce tableau on se rends compte que certains algorithmes ne peuvent pas être utilisés dans ce projet, du coup pour la suite on va se baser sur les algorithmes valables:
 - Estimation des repéres
 - KNN
 - Regression logistique
 
 ### Évalutation des points négatifs
 
-##### 
+#####  Estimation des repéres
+
+1. Avantage
+    - Performant et efficace ++
+    - Facile de repérer les différences entre deux plantes +++
+    - Permets de connaître la maturation d'une plante +
+
+2. Faiblesse
+    - nécessite des rensemblances importantes entre les plantes de même famille --
+    - nécessite que les plantes ne se ressemblent pas ---
+    - la couleur de la plante n'est pas pris en compte -
+
+\+ : 6
+\- : 6 
+6 - 6 = 0
+
+#####  KNN
+
+1. Avantage
+    - Simple d'implémentation +
+    - Déjà fait c'est preuve pour les plantes (explication dans le document montré) ++++
+    - Le programme se configure tout seul, afin d'évaluer les différences (calcul de poids) +++
+
+2. Faiblesse
+    - Nécessite de grande base de données pour entrainer au maximum l'algorithme --
+    - Il peut faire des erreurs de détections en fonction des images de tests --
+    - Long à entrainer -
+
+\+ : 8
+\- : 5
+8 - 5 = 3
+
+#####  Regression logistique
+
+1. Avantage
+    - Permets d'identifier la plante avec d'autre plantes, donc une plus faible source d'erreurs +++
+    - Simple d'implémentation +
+    - Le programme se configure tout seul, afin d'évaluer les différences (calcul des coefficients logistiques) +++
+
+2. Faiblesse
+    - Nécessite de grande base de données pour entrainer au maximum l'algorithme --
+    - Pose des problèmes d'interprétation pour les plantes non connu --
+    - Long à entrainer et à fonctionner -
+
+\+ : 7
+\- : 5
+7 - 5 = 2
+
+### Conclusion
+
+En conclusion d'aprés nos notations, l'algorithme le plus adapté à notre projet se trouve être le KNN, bien que suivi de près par la regression logistique.
