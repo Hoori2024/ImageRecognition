@@ -208,19 +208,33 @@ Pour l'utilisation dans le cadre du projet:
 
 
 
-### Algorithme 6 -
+### Algorithme 6 - Détection de contour
 1. Utilisation / Fonctionnement
+> https://fr.wikipedia.org/wiki/D%C3%A9tection_de_contours
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Sobel-edges-sacrecoeur.png?uselang=fr">
+
+```
+La détection de contours, ce base sur le changement de l'image en noir et blanc, une fois celui-ci effectué.
+Il est donc facile de comparer la forme des différents objets afin de reconnaître le forme globale de la plante.
+```
+
+Pour l'utilisation dans le cadre du projet:
+- Détecter la forme des feuilles pour savoir si même feuille
 
 2. Avantage
+    - Permet de séparer les différents items sur une image
+    - Simple d'implémentation
+    - Ne prends pas en compte les variations de couleurs de la plante en cas de manque d'eau
 
 3. Faiblesse
+    - Gestion des variation compliqué
+    - Gestion de plusieurs daturas sur une même image possible
+    - Si obtruaction partiel du contour de la plante, source d'erreur possible
 
 4. Exemple d'utilisation
-
-
-
-
+    - Détection des formes
+    - Détection de texte
 
 
 #  Lister les forces / faiblesses que doit / ne doit pas posséder l'algorithme
@@ -276,3 +290,23 @@ Donc l'algorithme ne doit pas avoir besoin de se baser sur ce point
 
 
 # Comparer les algorithmes
+
+Dans un premier temps nous allons mettre en place un tableau afin d'identifier si les algorithmes correspondent aux points précédement noté:
+
+| Algorithme            	| Point 1 	| Point 2-3 | Point 4 	| Point 5 	|
+|------------------------	|---------	|---------	|---------	|---------	|
+| Kmeans                	|   Oui    	|  Non     	|Non       	|Oui/Non   	|
+| SVM                   	|   Oui  	|  Non     	|Non       	|Oui/Non   	|
+| Estimation des repéres 	|   Oui    	|  Oui     	|Oui/Non   	|Oui       	|
+| KNN                   	|   Oui    	|  Oui     	|Oui      	|Oui    	|
+| Regression logistique  	|   Oui   	|  Oui     	|Oui       	|Oui    	|
+| Détection de contours    	|   Oui    	|  Oui/Non 	|Non       	|Oui       	|
+
+Avec ce tableau on se rends compte que certains algorithmes ne peuvent pas être utilisé dans ce projet, du coup pour la suite on va se baser sur les algorithmes valables:
+- Estimation des repéres
+- KNN
+- Regression logistique
+
+### Évalutation des points négatifs
+
+##### 
